@@ -1,0 +1,72 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+//修改el 菜单样式
+.el-menu {
+  background-color: transparent !important;
+  border-right: none !important;
+}
+
+.el-menu--popup {
+  background-color: #fff !important;
+}
+
+.el-tabs--card {
+  border-bottom: 1px solid transparent !important;
+  box-shadow: unset !important;
+  border: none !important;
+
+  .el-tabs__content {
+    padding: 0 !important;
+  }
+
+  .el-tabs__nav {
+    border-bottom: none;
+    border: 1px solid #cfd7e5 !important;
+    border-bottom: none !important;
+    border-radius: 4px 4px 0 0;
+  }
+
+}
+
+
+
+.el-dropdown-menu {
+  padding: 6px 0 !important;
+
+  .el-dropdown-menu--small {
+    .el-dropdown-menu__item {
+      line-height: 27px !important;
+      padding: 0 15px !important;
+      font-size: 13px !important;
+    }
+  }
+}
+
+/* fade-transform */
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all 0.5s;
+}
+
+.fade-transform-enter {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
