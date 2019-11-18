@@ -13,6 +13,6 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@master
       env:
         ACCESS_TOKEN: ${{ secrets.vue_s_admin }}
-        BRANCH: myadmin-pages
+        BRANCH: gh-pages
         FOLDER: docs
         BUILD_SCRIPT: npm install && npm run build
