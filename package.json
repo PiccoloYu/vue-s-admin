@@ -2,7 +2,7 @@
   "name": "vue-admin",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://PiccoloYu.github.io/vue-s-admin/",
+  "homepage": "https://PiccoloYu.github.io/vue-s-admin",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
