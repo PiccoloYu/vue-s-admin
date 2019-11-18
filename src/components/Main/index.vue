@@ -1,7 +1,7 @@
 <template>
   <main class="main">
     <Tab />
-    <transition name="fade-transform" mode="out-in">
+    <transition name="fade-transverse" mode="out-in">
       <router-view :key="key" class="app-main" />
     </transition>
   </main>

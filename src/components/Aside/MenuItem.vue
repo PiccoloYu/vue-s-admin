@@ -5,7 +5,6 @@
         <Item :title="onlyOneChild.title" :icon="onlyOneChild.meta.icon" />
       </el-menu-item>
     </template>
-
     <el-submenu v-else :index="resolvePath(item.path)" popper-append-to-body>
       <template slot="title">
         <Item v-if="item.meta" :title="item.meta.title" :icon="item.meta && item.meta.icon" />
@@ -143,19 +142,23 @@ export default {
 <style lang="scss">
 #app {
   .closeaside {
+    .el-submenu {
+      position: relative;
+    }
     .el-menu--collapse {
-      .el-submenu__title {
-        span {
-          transition: all 0.3s;
-          height: 0;
-          width: 0;
-          overflow: hidden;
-          visibility: hidden;
-          display: inline-block;
-        }
-        .el-submenu__icon-arrow {
-          transition: all 0.3s;
-          display: none;
+      .el-submenu {
+        & > .el-submenu__title {
+          & > span {
+            height: 0;
+            width: 0;
+            overflow: hidden;
+            visibility: hidden;
+            display: inline-block;
+          }
+          .el-submenu__icon-arrow {
+            transition: all 0.28s;
+            display: none;
+          }
         }
       }
     }

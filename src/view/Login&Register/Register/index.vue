@@ -41,12 +41,13 @@
     <el-form-item prop="code">
       <el-input
         ref="code"
-        v-model.number="form.code"
+        :value="form.code"
         placeholder="验证码"
         name="code"
         type="text"
         tabindex="1"
         autocomplete="on"
+        @input="e => form.code = validCapital(e)"
       />
       <img src="/img/login-code.10fef840.png" class="codeimg">
     </el-form-item>

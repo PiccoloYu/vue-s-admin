@@ -1,7 +1,15 @@
 <template>
   <aside class="aside" :class="classObj">
     <div class="logo">Admin</div>
-    <el-menu router :default-active="activeMenu" class="el-menu-vertical-demo" :collapse="!opened">
+    <el-menu
+      router
+      :default-active="activeMenu"
+      class="el-menu-vertical-demo"
+      :collapse="!opened"
+      :unique-opened="false"
+      :collapse-transition="false"
+      mode="vertical"
+    >
       <MenuItem v-for="route in routes" :key="route.path" :item="route" :base-path="route.path" />
     </el-menu>
   </aside>
@@ -101,7 +109,7 @@ export default {
   height: 100%;
   position: fixed;
   top: 0;
-  transition: all 0.3s;
+  transition: all 0.28s;
 }
 
 .closeaside {
@@ -111,7 +119,7 @@ export default {
 
 .openaside {
   //left: 0;
-  width: 210px;
+  width: 200px;
 }
 
 //修改el 菜单样式

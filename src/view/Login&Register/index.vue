@@ -114,18 +114,14 @@ export default {
           { required: true, message: '请输入用户名', trigger: 'blur' },
           { validator: validateName, trigger: 'blur' }
         ],
-        password: [
-          { validator: validatePass, trigger: 'blur' }
-        ]
+        password: [{ validator: validatePass, trigger: 'blur' }]
       },
       Rrules: {
         username: [
           { required: true, message: '请输入用户名', trigger: 'blur' },
           { validator: validateName, trigger: 'blur' }
         ],
-        password: [
-          { validator: validatePass, trigger: 'blur' }
-        ],
+        password: [{ validator: validatePass, trigger: 'blur' }],
         repeatpassword: [{ validator: validatePass2, trigger: 'blur' }]
       }
     };
@@ -212,10 +208,8 @@ export default {
                   message: '恭喜登录成功！',
                   type: 'success'
                 });
-                setTimeout(() => {
-                  this.$router.push({ path: '/' });
-                  this.loading = false;
-                }, 1000);
+                this.$router.push({ path: '/' });
+                this.loading = false;
               })
               .catch(res => {
                 this.loading = false;

@@ -2,7 +2,7 @@
   <header class="header">
     <i class="myicon" :class="iconclass" @click="test" />
     <el-breadcrumb separator="/" class="Breadcrumb_main">
-      <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+      <el-breadcrumb-item class="test" :to="{ path: '/' }">首页</el-breadcrumb-item>
       <transition-group name="breadcrumb">
         <el-breadcrumb-item v-for="(item,index) in levelList" :key="item.path">
           <span v-if="index==levelList.length-1" class="no-redirect">{{ item.meta.title }}</span>
@@ -169,6 +169,9 @@ export default {
         position: relative;
         top: 10px;
         font-size: 15px;
+        &>.el-dropdown-link:hover{
+          color: #409EFF
+        }
       }
     }
   }
@@ -216,4 +219,5 @@ export default {
 .breadcrumb-leave-active {
   position: absolute;
 }
+
 </style>

@@ -9,7 +9,7 @@ Mock.mock('http://localhost:8082/test', {
   }]
 });
 
-const userInfo = {
+const userInfo = {// 'password': '123456',
   'username': 'admin',
   'password': '123456',
   'code': 'V9AM'
@@ -20,7 +20,7 @@ const tokens = {
     token: 'admin-mytoken'
   },
   editor: {
-    token: 'admin-mytoken'
+    token: 'editor-mytoken'
   }
 };
 

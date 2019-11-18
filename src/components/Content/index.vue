@@ -87,7 +87,7 @@ export default {
 .Content {
   //height: calc(100% - 3.75rem);
   height: calc(100%);
-  transition: all 0.3s;
+  transition: all 0.28s;
 }
 
 .Contentleft {

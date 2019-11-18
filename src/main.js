@@ -34,6 +34,17 @@ Vue.prototype.validSpace = function(value, number = 255) {
   return value;
 };
 
+Vue.prototype.validCapital = function(value, number = 255) {
+  value = value.replace(/\s/g, '').replace(/[\W]/g, '');
+  if (value.length >= number) {
+    this.$message({
+      type: 'warning',
+      message: `输入内容不能超过${number}个字符`
+    });
+  }
+  return value.toUpperCase();
+};
+
 new Vue({
   store,
   router,
