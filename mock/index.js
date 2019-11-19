@@ -1,4 +1,5 @@
 import Mock from 'mockjs';
+
 Mock.mock('http://localhost:8082/test', {
   'serInfo|4': [{
     'id|+1': 1,
@@ -64,3 +65,18 @@ Mock.mock('http://localhost:8082/user/logout', 'get', function(options) {
     data: 'success'
   };
 });
+
+/* Mock.mock('http://localhost:8082/getchart/min', 'get', function(option) {
+  return fetch('./data/getchart.json')
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      return {
+        'data': data
+      };
+    })
+    .catch((e) => {
+      console.log(e);
+    });
+});*/

@@ -5,10 +5,13 @@ import store from '@/store';
 import router from '@/router';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import '../mock/user';
+import '../mock';
 import axios from 'axios'; // 注意这行
+import echarts from 'echarts';
 
+Vue.prototype.$echarts = echarts;
 Vue.prototype.$http = axios; // 注意这行
+
 Vue.use(ElementUI);
 Vue.config.productionTip = false;
 

@@ -1,27 +1,21 @@
 <template>
-  <main class="main">
-    <Tab />
-    <transition name="fade-transverse" mode="out-in">
-      <router-view :key="key" class="app-main" />
-    </transition>
-  </main>
+  <Chart height="100%" width="100%" />
 </template>
 
 <script>
-import Tab from '../Tab';
+import Chart from '@/components/Charts/pieChart';
+
 export default {
   components: {
-    Tab
+    Chart
   },
   props: {},
   data() {
-    return {};
+    return {
+      chart: null
+    };
   },
-  computed: {
-    key() {
-      return this.$route.path;
-    }
-  },
+  computed: {},
   watch: {},
   beforeCreate() {
     /*
@@ -79,21 +73,5 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.main {
-  //background: #fff;
-  height: calc(100% - 3.875rem);
-  //border: 1px solid #cfd7e5;
-  border-radius: 5px;
 
-  .app-main {
-    background: #fff;
-    height: calc(100% - 3.75rem);
-    border-left: 1px solid #cfd7e5;
-    border-bottom: 1px solid #cfd7e5;
-    border-right: 1px solid #cfd7e5;
-    width: calc(100% - 20px) !important;
-    box-shadow: 0px 0px 15px rgba(44, 51, 73, 0.1) inset;
-  }
-
-}
 </style>

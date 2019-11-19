@@ -289,7 +289,7 @@ export default {
 </script>
 <style lang="scss" >
 .Tab {
-  margin-right: 20px;
+  width: calc(100% - 19px);
   .el-tabs--card {
     & > .el-tabs__header {
       padding: 0;
