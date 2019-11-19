@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <img src="../../assets/logo.png">
-    <h1>HelloWorld</h1>
+    <h1>{{ holle }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,
       <br>check out the
@@ -77,6 +77,7 @@ export default {
   props: {},
   data() {
     return {
+      holle: 'HelloWorld'
     };
   },
   computed: {},
