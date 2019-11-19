@@ -49,7 +49,7 @@
         autocomplete="on"
         @input="e => form.code = validCapital(e)"
       />
-      <img src="/img/login-code.10fef840.png" class="codeimg">
+      <img src="../../../assets/login-code.10fef840.png" class="codeimg">
     </el-form-item>
     <!--<el-button type="primary" :loading="false" style="width:100%;margin-bottom:10px;height:35px;">注册</el-button>-->
   </div>
