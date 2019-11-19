@@ -103,9 +103,9 @@ export default {
         forgetpas: '忘记密码',
         forgetpasicon: 'el-icon-question',
         form: {
-          username: '',
-          password: '',
-          code: ''
+          username: 'admin',
+          password: '123456',
+          code: 'V9AM'
         },
         height: 330
       },
