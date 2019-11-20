@@ -31,11 +31,12 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['opened']),
+    ...mapGetters(['opened', 'device']),
     classObj() {
       return {
-        closeaside: !this.opened,
-        openaside: this.opened
+        closeaside: !this.opened && this.device === 'desktop',
+        openaside: this.opened,
+        mobileclose: !this.opened && this.device === 'mobile'
       };
     },
     activeMenu() {
@@ -110,11 +111,17 @@ export default {
   position: fixed;
   top: 0;
   transition: all 0.28s;
+  background: #ebf1f6;
+  z-index: 9999;
 }
 
 .closeaside {
   //left: -210px;
   width: 4.0625rem;
+}
+
+.mobileclose {
+  transform: translate3d(-210px, 0, 0);
 }
 
 .openaside {

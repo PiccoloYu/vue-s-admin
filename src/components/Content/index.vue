@@ -19,11 +19,11 @@ export default {
     return {};
   },
   computed: {
-    ...mapGetters(['opened']),
+    ...mapGetters(['opened', 'device']),
     classObj() {
       return {
-        Contentleft: !this.opened,
-        Contentright: this.opened
+        Contentleft: !this.opened && this.device === 'desktop',
+        Contentright: this.opened && this.device === 'desktop'
       };
     }
   },

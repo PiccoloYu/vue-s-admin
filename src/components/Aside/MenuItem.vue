@@ -145,20 +145,20 @@ export default {
     .el-submenu {
       position: relative;
     }
-    .el-menu--collapse {
-      .el-submenu {
-        & > .el-submenu__title {
-          & > span {
-            height: 0;
-            width: 0;
-            overflow: hidden;
-            visibility: hidden;
-            display: inline-block;
-          }
-          .el-submenu__icon-arrow {
-            transition: all 0.28s;
-            display: none;
-          }
+  }
+  .el-menu--collapse {
+    .el-submenu {
+      & > .el-submenu__title {
+        & > span {
+          height: 0;
+          width: 0;
+          overflow: hidden;
+          visibility: hidden;
+          display: inline-block;
+        }
+        .el-submenu__icon-arrow {
+          transition: all 0.28s;
+          display: none;
         }
       }
     }

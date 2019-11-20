@@ -2,13 +2,14 @@
   <main class="main">
     <Tab />
     <transition name="fade-transverse" mode="out-in">
-      <router-view :key="key" class="app-main" />
+      <router-view :key="key" class="app-main" :style="style" />
     </transition>
   </main>
 </template>
 
 <script>
 import Tab from '../Tab';
+import { mapGetters } from 'vuex';
 export default {
   components: {
     Tab
@@ -18,8 +19,14 @@ export default {
     return {};
   },
   computed: {
+    ...mapGetters(['device']),
     key() {
       return this.$route.path;
+    },
+    style() {
+      return {
+        width: this.device === 'desktop' ? 'calc(100% - 20px) !important' : ''
+      };
     }
   },
   watch: {},
@@ -91,9 +98,8 @@ export default {
     border-left: 1px solid #cfd7e5;
     border-bottom: 1px solid #cfd7e5;
     border-right: 1px solid #cfd7e5;
-    width: calc(100% - 20px) !important;
     box-shadow: 0px 0px 15px rgba(44, 51, 73, 0.1) inset;
+    transition: all 0.28s;
   }
-
 }
 </style>

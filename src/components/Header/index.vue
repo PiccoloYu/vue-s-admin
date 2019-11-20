@@ -169,8 +169,8 @@ export default {
         position: relative;
         top: 10px;
         font-size: 15px;
-        &>.el-dropdown-link:hover{
-          color: #409EFF
+        & > .el-dropdown-link:hover {
+          color: #409eff;
         }
       }
     }
@@ -219,5 +219,4 @@ export default {
 .breadcrumb-leave-active {
   position: absolute;
 }
-
 </style>

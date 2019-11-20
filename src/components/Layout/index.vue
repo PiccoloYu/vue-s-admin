@@ -2,6 +2,7 @@
   <div class="layout">
     <Aside />
     <Content />
+    <div v-show="drawer" class="drawer-bg" @click="closeAside" />
   </div>
 </template>
 
@@ -9,18 +10,28 @@
 import { mapGetters } from 'vuex';
 import Content from '../Content';
 import Aside from '../Aside';
-
+import Resize from './mixin/Resize';
 export default {
   components: {
     Content,
     Aside
   },
+  mixins: [Resize],
   props: {},
   data() {
     return {};
   },
   computed: {
-    ...mapGetters(['pageopen', 'visitedViews', 'cachedViews']),
+    ...mapGetters([
+      'pageopen',
+      'visitedViews',
+      'cachedViews',
+      'device',
+      'opened'
+    ]),
+    drawer() {
+      return !!(this.opened && this.device === 'mobile');
+    },
     routes() {
       return this.$store.state.permission.routes;
     }
@@ -79,8 +90,8 @@ export default {
      */
   },
   methods: {
-    clicktest() {
-      console.log('123');
+    closeAside() {
+      this.$store.dispatch('app/toggleSideBar');
     }
   }
 };
@@ -90,5 +101,14 @@ export default {
   height: 100%;
   width: 100%;
   background: #ebf1f6;
+}
+.drawer-bg {
+  background: #000;
+  opacity: 0.3;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  position: absolute;
+  z-index: 999;
 }
 </style>

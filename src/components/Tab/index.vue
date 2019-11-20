@@ -1,5 +1,5 @@
 <template>
-  <div class="Tab">
+  <div class="Tab" :style="style">
     <el-tabs
       v-model="activeTab"
       type="card"
@@ -64,7 +64,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['constantRoutes', 'visitedViews', 'cachedViews']),
+    ...mapGetters(['constantRoutes', 'visitedViews', 'cachedViews', 'device']),
     routes() {
       return this.constantRoutes;
     },
@@ -78,6 +78,11 @@ export default {
       set: function(val) {
         return val;
       }
+    },
+    style() {
+      return {
+        width: this.device === 'desktop' ? 'calc(100% - 19px) !important' : ''
+      };
     }
   },
   watch: {
@@ -289,7 +294,7 @@ export default {
 </script>
 <style lang="scss" >
 .Tab {
-  width: calc(100% - 19px);
+  // width: calc(100% - 19px);
   .el-tabs--card {
     & > .el-tabs__header {
       padding: 0;
