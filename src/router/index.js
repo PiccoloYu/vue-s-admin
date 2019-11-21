@@ -44,7 +44,7 @@ export const constantRoutes = [
     children: [
       {
         path: 'home',
-        component: () => import('@/view/home'),
+        component: () => import('@/view/Home'),
         name: '首页',
         title: '首页',
         meta: { title: '首页', icon: 'el-icon-s-home', affix: true }
@@ -62,24 +62,42 @@ export const constantRoutes = [
     children: [
       {
         path: 'lineChart',
-        component: () => import('@/view/charts/lineChart'),
+        component: () => import('@/view/Charts/lineChart'),
         name: 'lineChart',
         title: 'lineChart',
         meta: { title: 'lineChart', icon: 'lineChart' }
       },
       {
         path: 'minChart',
-        component: () => import('@/view/charts/minChart'),
+        component: () => import('@/view/Charts/minChart'),
         name: 'minChart',
         title: 'minChart',
         meta: { title: 'minChart', icon: 'minChart' }
       },
       {
         path: 'pieChart',
-        component: () => import('@/view/charts/pieChart'),
+        component: () => import('@/view/Charts/pieChart'),
         name: 'pieChart',
         title: 'pieChart',
         meta: { title: 'pieChart', icon: 'pieChart' }
+      }
+    ]
+  },
+  {
+    path: '/table',
+    component: Layout,
+    meta: {
+      title: '表格',
+      icon: 'el-icon-s-grid'
+      // roles: ['admin', 'editor'] // you can set roles in root nav
+    },
+    children: [
+      {
+        path: 'table',
+        component: () => import('@/view/Table/Table'),
+        name: 'Table',
+        title: 'Table',
+        meta: { title: 'Table', icon: 'el-icon-s-grid' }
       }
     ]
   }

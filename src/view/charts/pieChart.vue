@@ -1,5 +1,7 @@
 <template>
-  <Chart height="100%" width="100%" />
+  <div class="chart_container main_bgborder">
+    <Chart height="100%" width="100%" />
+  </div>
 </template>
 
 <script>
@@ -73,5 +75,4 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-
 </style>

@@ -1,9 +1,11 @@
 <template>
   <main class="main">
     <Tab />
-    <transition name="fade-transverse" mode="out-in">
-      <router-view :key="key" class="app-main" :style="style" />
-    </transition>
+    <section class="app-main" :style="style">
+      <transition name="fade-transform" mode="out-in">
+        <router-view :key="key" class="router" />
+      </transition>
+    </section>
   </main>
 </template>
 
@@ -19,6 +21,9 @@ export default {
     return {};
   },
   computed: {
+    cachedViews() {
+      return this.$store.state.tagsView.cachedViews;
+    },
     ...mapGetters(['device']),
     key() {
       return this.$route.path;
@@ -87,19 +92,20 @@ export default {
 </script>
 <style lang="scss" scoped>
 .main {
+  position: relative;
   //background: #fff;
-  height: calc(100% - 3.875rem);
+  height: calc(100vh - 3.875rem);
   //border: 1px solid #cfd7e5;
   border-radius: 5px;
 
+  //padding-bottom: 3.875rem;
   .app-main {
-    background: #fff;
-    height: calc(100% - 3.75rem);
-    border-left: 1px solid #cfd7e5;
-    border-bottom: 1px solid #cfd7e5;
-    border-right: 1px solid #cfd7e5;
-    box-shadow: 0px 0px 15px rgba(44, 51, 73, 0.1) inset;
+    position: relative;
+    height: calc(100% - 60px); //3.75rem
+    //box-shadow: 0px 0px 15px rgba(44, 51, 73, 0.1) inset;
     transition: all 0.28s;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }
 </style>

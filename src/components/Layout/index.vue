@@ -98,7 +98,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .layout {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   background: #ebf1f6;
 }

@@ -240,8 +240,8 @@ export default {
       if (flag) {
         e.preventDefault();
         e.stopPropagation();
-        this.contentmenuX = e.clientX;
-        this.contentmenuY = e.clientY;
+        this.contentmenuX = e.clientX - 210;
+        this.contentmenuY = e.clientY - 60;
         this.tagName = target.getAttribute('aria-controls').slice(5);
         this.visible = true;
       }

@@ -1,5 +1,5 @@
 <template>
-  <div :id="id" :class="className" :style="{width:width,heigth:heigth}" />
+  <div :id="id" :class="className" :style="{width:width,height:height}" />
 </template>
 
 <script>
@@ -20,7 +20,7 @@ export default {
       type: String,
       default: '200px'
     },
-    heigth: {
+    height: {
       type: String,
       default: '200px'
     }
@@ -101,7 +101,16 @@ export default {
         legend: {
           x: 'center',
           y: 'bottom',
-          data: ['rose1', 'rose2', 'rose3', 'rose4', 'rose5', 'rose6', 'rose7', 'rose8']
+          data: [
+            'rose1',
+            'rose2',
+            'rose3',
+            'rose4',
+            'rose5',
+            'rose6',
+            'rose7',
+            'rose8'
+          ]
         },
         toolbox: {
           show: true,

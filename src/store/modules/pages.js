@@ -199,9 +199,9 @@ const actions = {// Action 提交的是 mutation，而不是直接变更状态�
       // 删除打开的页面 并在缓存设置中删除
       state.visitedViews.splice(1);// .forEach(({ name }) => commit('keepAliveRemove', name))
       // 关闭所有的标签页后需要判断一次现在是不是在首页
-      if (router.app.$route.name !== 'home') {
+      if (router.app.$route.name !== '首页') {
         router.push({
-          name: 'home'
+          name: '首页'
         });
       }
       resolve();

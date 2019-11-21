@@ -1,5 +1,5 @@
 <template>
-  <div :id="id" :class="className" :style="{width:width,heigth:heigth}" />
+  <div :id="id" :class="className" :style="{width:width,height:height}" />
 </template>
 
 <script>
@@ -21,7 +21,7 @@ export default {
       type: String,
       default: '200px'
     },
-    heigth: {
+    height: {
       type: String,
       default: '200px'
     }

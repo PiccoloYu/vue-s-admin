@@ -14,12 +14,12 @@
       </transition-group>
     </el-breadcrumb>
     <div class="avatar">
-      <div class="avatar_img">
-        <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
-      </div>
       <div class="avatar_text">
         <el-dropdown class="avatar_but" size="small" trigger="click" @command="logout">
-          <span class="el-dropdown-link">你好，{{ name }}</span>
+          <div class="avatar_img">
+            <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
+            <i class="el-icon-caret-bottom" />
+          </div>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item command="logout">
               <i class="el-icon-circle-close" />
@@ -174,6 +174,13 @@ export default {
       display: flex;
       margin-right: 10px;
       align-items: center;
+      & > i {
+        font-size: 12px;
+        bottom: 0;
+        height: 5px;
+        margin-top: 20px;
+        margin-left: 8px;
+      }
     }
     .avatar_text {
       cursor: pointer;
@@ -182,6 +189,7 @@ export default {
         top: 10px;
         font-size: 15px;
       }
+
       .avatar_but {
         height: 30px;
         line-height: 30px;

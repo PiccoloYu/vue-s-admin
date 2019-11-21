@@ -1,10 +1,10 @@
 <template>
-  <div class="hello">
-    <img src="../../assets/logo.png">
+  <div class="hello main_bgborder">
+    <img src="../../assets/logo.png" >
     <h1>{{ holle }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,
-      <br>check out the
+      <br >check out the
       <a
         href="https://cli.vuejs.org"
         target="_blank"
@@ -153,6 +153,8 @@ a {
   color: #42b983;
 }
 .hello {
+  position: relative;
   text-align: center;
+  background: #fff;
 }
 </style>
