@@ -244,8 +244,8 @@ export default {
   overflow: hidden;
   display: flex;
   align-items: center;
-  background: #fff;
-
+  background: url("../../assets/loginbg.jpg");
+  background-size: 100%;
   a {
     color: #696969;
     text-decoration: none;
@@ -257,7 +257,7 @@ export default {
   .el-form-item__content {
     height: 35px;
     line-height: 35px;
-    box-shadow: 0px 0px 15px #888888;
+    // box-shadow: 0px 0px 15px #888888;
   }
   .fromfooter {
     display: flex;

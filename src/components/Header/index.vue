@@ -2,10 +2,13 @@
   <header class="header">
     <i class="myicon" :class="iconclass" @click="test" />
     <el-breadcrumb separator="/" class="Breadcrumb_main">
-      <el-breadcrumb-item class="test" :to="{ path: '/' }">首页</el-breadcrumb-item>
       <transition-group name="breadcrumb">
         <el-breadcrumb-item v-for="(item,index) in levelList" :key="item.path">
-          <span v-if="index==levelList.length-1" class="no-redirect">{{ item.meta.title }}</span>
+          <span v-if="index===levelList.length-1" class="no-redirect">{{ item.meta.title }}</span>
+          <a
+            v-else-if="item.path === '/home'"
+            @click.prevent="handleLink(item)"
+          >{{ item.meta.title }}</a>
           <span v-else>{{ item.meta.title }}</span>
         </el-breadcrumb-item>
       </transition-group>
@@ -120,12 +123,31 @@ export default {
       this.$store.dispatch('app/toggleSideBar');
     },
     getBreadcrumb() {
-      const matched = this.$route.matched.filter(
+      let matched = this.$route.matched.filter(
         item => item.meta && item.meta.title
       );
+      const first = matched[0];
+      if (!this.isDashboard(first)) {
+        matched = [{ path: '/home', meta: { title: '首页' }}].concat(matched);
+      }
       this.levelList = matched.filter(
         item => item.meta && item.meta.title && item.meta.breadcrumb !== false
       );
+    },
+    isDashboard(route) {
+      const name = route && route.name;
+      if (!name) {
+        return false;
+      }
+      return name.trim().toLocaleLowerCase() === '首页'.toLocaleLowerCase();
+    },
+    handleLink(item) {
+      const { redirect, path } = item;
+      if (redirect) {
+        this.$router.push(redirect);
+        return;
+      }
+      this.$router.push(path);
     },
     async logout(command) {
       if (command === 'logout') {
