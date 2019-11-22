@@ -44,7 +44,7 @@ export const constantRoutes = [
     children: [
       {
         path: 'home',
-        component: () => import('@/view/Home'),
+        component: () => import('@/view/Home/index'),
         name: '首页',
         title: '首页',
         meta: { title: '首页', icon: 'el-icon-s-home', affix: true }
