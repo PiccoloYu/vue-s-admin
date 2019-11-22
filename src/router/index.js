@@ -62,21 +62,21 @@ export const constantRoutes = [
     children: [
       {
         path: 'lineChart',
-        component: () => import('@/view/Charts/lineChart'),
+        component: () => import('@/view/Charts/lineChartview'),
         name: 'lineChart',
         title: 'lineChart',
         meta: { title: 'lineChart', icon: 'lineChart' }
       },
       {
         path: 'minChart',
-        component: () => import('@/view/Charts/minChart'),
+        component: () => import('@/view/Charts/minChartview'),
         name: 'minChart',
         title: 'minChart',
         meta: { title: 'minChart', icon: 'minChart' }
       },
       {
         path: 'pieChart',
-        component: () => import('@/view/Charts/pieChart'),
+        component: () => import('@/view/Charts/pieChartview'),
         name: 'pieChart',
         title: 'pieChart',
         meta: { title: 'pieChart', icon: 'pieChart' }
