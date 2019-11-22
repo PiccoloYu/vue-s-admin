@@ -14,4 +14,5 @@ jobs:
       env:
         ACCESS_TOKEN: ${{ secrets.vue_s_admin }}
         BRANCH: gh-pages
+        FOLDER: dist
         BUILD_SCRIPT: npm install && npm run build
