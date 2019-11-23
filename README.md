@@ -6,7 +6,7 @@
 
 ## Dome
 
-![demo](https://piccoloyu.github.io/vue-s-admin/img/dome.gif)
+ <img src="https://piccoloyu.github.io/vue-s-admin/img/dome.gif" alt="donate">
 
 >感谢开源项目
 
