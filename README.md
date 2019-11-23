@@ -8,13 +8,6 @@
 
  <img src="https://piccoloyu.github.io/vue-s-admin/img/dome.gif" alt="dome">
 
->感谢开源项目
-
-[vue-admin-template](https://github.com/PanJiaChen/vue-admin-template)
-
-[d2-admin](https://github.com/d2-projects/d2-admin)
-
-
 ## Project setup
 
 ```javascript
@@ -48,3 +41,10 @@ yarn run lint
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+>感谢开源项目
+
+[vue-admin-template](https://github.com/PanJiaChen/vue-admin-template)
+
+[d2-admin](https://github.com/d2-projects/d2-admin)
