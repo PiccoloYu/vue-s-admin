@@ -1,55 +1,19 @@
 <template>
-  <aside class="aside" :class="classObj">
-    <div class="logo">Admin</div>
-    <el-menu
-      router
-      :default-active="activeMenu"
-      class="el-menu-vertical-demo"
-      :collapse="!opened"
-      :unique-opened="false"
-      :collapse-transition="false"
-      mode="vertical"
-    >
-      <MenuItem v-for="route in routes" :key="route.path" :item="route" :base-path="route.path" />
-    </el-menu>
-  </aside>
+  <div class="Search">
+    <el-select v-model="value" filterable default-first-option remote placeholder="Search" />
+  </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-import { constantRoutes } from '../../router';
-import MenuItem from './MenuItem';
-
 export default {
-  components: {
-    MenuItem
-  },
+  components: {},
   props: {},
   data() {
     return {
-      routes: constantRoutes
+      value: ''
     };
   },
-  computed: {
-    ...mapGetters(['opened', 'device']),
-    classObj() {
-      return {
-        closeaside: !this.opened && this.device === 'desktop',
-        openaside: this.opened,
-        mobileclose: !this.opened && this.device === 'mobile',
-        mobile: this.device === 'mobile'
-      };
-    },
-    activeMenu() {
-      const route = this.$route;
-      const { meta, path } = route;
-
-      if (meta.activeMenu) {
-        return meta.activeMenu;
-      }
-      return path;
-    }
-  },
+  computed: {},
   watch: {},
   beforeCreate() {
     /*
@@ -107,49 +71,10 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.aside {
-  height: 100%;
-  position: fixed;
-  top: 0;
-  transition: all 0.28s;
-  //color: #fff;
-  background: #ebf1f6;
-  //background: rgb(48, 65, 86);;
-}
-
-.closeaside {
-  //left: -210px;
-  width: 4.0625rem;
-}
-
-.mobile {
-  z-index: 1001;
-}
-
-.mobileclose {
-  transform: translate3d(-200px, 0, 0);
-}
-
-.openaside {
-  //left: 0;
-  width: 200px;
-}
-
-//修改el 菜单样式
-.el-menu {
-  background-color: transparent !important;
-  .el-menu .el-menu--inline {
-    background-color: transparent !important;
+.Search {
+  padding-right: 20px;
+  & > i {
+    font-size: 20px;
   }
-  .el-menu-item.is-active {
-    color: #2f74ff;
-    fill: #2f74ff;
-  }
-}
-
-.logo {
-  height: 3.75rem;
-  line-height: 3.75rem;
-  text-align: center;
 }
 </style>

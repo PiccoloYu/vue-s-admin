@@ -134,7 +134,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.exchange{
+.exchange {
   cursor: pointer;
 }
 </style>

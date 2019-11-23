@@ -1,18 +1,20 @@
 <template>
   <header class="header">
-    <i class="myicon" :class="iconclass" @click="test" />
-    <el-breadcrumb separator="/" class="Breadcrumb_main">
-      <transition-group name="breadcrumb">
-        <el-breadcrumb-item v-for="(item,index) in levelList" :key="item.path">
-          <span v-if="index===levelList.length-1" class="no-redirect">{{ item.meta.title }}</span>
-          <a
-            v-else-if="item.path === '/home'"
-            @click.prevent="handleLink(item)"
-          >{{ item.meta.title }}</a>
-          <span v-else>{{ item.meta.title }}</span>
-        </el-breadcrumb-item>
-      </transition-group>
-    </el-breadcrumb>
+    <div>
+      <i class="myicon" :class="iconclass" @click="test" />
+      <el-breadcrumb separator="/" class="Breadcrumb_main">
+        <transition-group name="breadcrumb">
+          <el-breadcrumb-item v-for="(item,index) in levelList" :key="item.path">
+            <span v-if="index===levelList.length-1" class="no-redirect">{{ item.meta.title }}</span>
+            <a
+              v-else-if="item.path === '/home'"
+              @click.prevent="handleLink(item)"
+            >{{ item.meta.title }}</a>
+            <span v-else>{{ item.meta.title }}</span>
+          </el-breadcrumb-item>
+        </transition-group>
+      </el-breadcrumb>
+    </div>
     <div class="avatar">
       <div class="avatar_text">
         <el-dropdown class="avatar_but" size="small" trigger="click" @command="logout">
@@ -34,8 +36,10 @@
 
 <script>
 import { mapGetters } from 'vuex';
+
 export default {
-  components: {},
+  components: {
+  },
   props: {},
   data() {
     return {
@@ -162,6 +166,7 @@ export default {
 .header {
   height: 60px;
   line-height: 60px;
+  display: flex;
   flex-direction: row;
   justify-content: space-between; //元素在主轴（页面）上左右两端或者上下两端开始排列
   align-items: center; //弹性盒子元素在该行的侧轴（纵轴）上居中放置。
