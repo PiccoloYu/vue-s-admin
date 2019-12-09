@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div class="layout" :class="classObj">
     <Aside />
     <Content />
     <div v-show="drawer" class="drawer-bg" @click="closeAside" />
@@ -29,6 +29,11 @@ export default {
       'device',
       'opened'
     ]),
+    classObj() {
+      return {
+        mobile: this.device === 'mobile'
+      };
+    },
     drawer() {
       return !!(this.opened && this.device === 'mobile');
     },

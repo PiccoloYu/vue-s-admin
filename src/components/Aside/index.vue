@@ -36,8 +36,7 @@ export default {
       return {
         closeaside: !this.opened && this.device === 'desktop',
         openaside: this.opened,
-        mobileclose: !this.opened && this.device === 'mobile',
-        mobile: this.device === 'mobile'
+        mobileclose: !this.opened && this.device === 'mobile'
       };
     },
     activeMenu() {
@@ -111,7 +110,7 @@ export default {
   height: 100%;
   position: fixed;
   top: 0;
-  transition: all 0.28s;
+  transition: width 0.28s;
   //color: #fff;
   background: #ebf1f6;
   //background: rgb(48, 65, 86);;
@@ -123,7 +122,10 @@ export default {
 }
 
 .mobile {
-  z-index: 1001;
+  .aside {
+    z-index: 1001;
+    transition:transform .28s;
+  }
 }
 
 .mobileclose {

@@ -15,7 +15,7 @@ export default {
     window.addEventListener('resize', this.__resizeHandler);
 
     this.$_asideElm = document.getElementsByClassName('aside')[0];
-    this.$_asideElm && this.$_asideElm.addEventListener('transitionend', this.$_sidebarResizeHandler);
+    this.$_asideElm && this.$_asideElm.addEventListener('transitionend', this.$_sidebarResizeHandler); // 监听侧边栏 宽度
   },
   beforeDestroy() {
     window.removeEventListener('resize', this.__resizeHandler);
