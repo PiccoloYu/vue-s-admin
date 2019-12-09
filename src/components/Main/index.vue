@@ -103,7 +103,7 @@ export default {
     position: relative;
     height: calc(100% - 60px); //3.75rem
     //box-shadow: 0px 0px 15px rgba(44, 51, 73, 0.1) inset;
-    transition: all 0.28s;
+    // transition: all 0.28s;
     overflow-y: auto;
     overflow-x: hidden;
   }

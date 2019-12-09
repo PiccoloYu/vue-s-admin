@@ -234,7 +234,6 @@ export default {
     color: #2f74ff;
   }
 }
-
 /* breadcrumb transition */
 .breadcrumb-enter-active,
 .breadcrumb-leave-active {

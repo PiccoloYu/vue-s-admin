@@ -87,6 +87,7 @@ export default {
 .Content {
   //height: calc(100% - 3.75rem);
   height: calc(100%);
+  width: 100%;
   transition: margin-left 0.28s;
 }
 
